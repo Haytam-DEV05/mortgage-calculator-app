@@ -1,0 +1,216 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-Lime: hsl(61, 70%, 52%) ;
+    --primary-Red: hsl(4, 69%, 50%) ;
+    --White: hsl(0, 0%, 100%) ;
+    --Slate-100: hsl(202, 86%, 94%) ;
+    --Slate-300: hsl(203, 41%, 72%) ;
+    --Slate-500: hsl(200, 26%, 54%) ;
+    --Slate-700: hsl(200, 24%, 40%) ;
+    --Slate-900: hsl(202, 55%, 16%) ;
+}
+
+body{
+}
+
+
+
+
+main section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Slate-100);
+}
+
+main section .box1,
+main section .box2{
+    height: max-content;
+    padding: 40px 70px;
+    height: 600px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main section .box1{
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: var(--White);
+}
+
+.box1 .text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box1 .inputs .input{
+    margin: 15px 0;
+}
+
+.box1 .inputs input{
+    padding: 5px 10px;
+    outline: none;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.box1 .inputs .rate,
+.box1 .inputs .term,
+.box1 .inputs .amount{
+    position: relative;
+}
+.box1 .inputs .term .input-symbol,
+.box1 .inputs .rate .input-symbol,
+.box1 .inputs .amount .input-symbol{
+    background-color: var(--Slate-100);
+    width: fit-content;
+    padding: 0 10px ;
+    position: absolute;
+    font-size: 20px;
+    min-height: 28px;
+    border: 1px solid var(--Slate-100);
+    top: 65%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box1 .inputs .amount .input-symbol{
+    left: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.box1 .inputs .term .input-symbol,
+.box1 .inputs .rate .input-symbol{
+    right: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+
+
+.box1 .inputs .type .interest,
+.box1 .inputs .type .repayment{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px 20px;
+
+}
+
+.box1 .inputs .type .interest input,
+.box1 .inputs .type .repayment input{
+    width: fit-content;
+    margin-right: 20px;
+}
+
+
+.box1 .btn-calculate button{
+    background-color: var(--primary-Lime);
+    max-width: fit-content;
+    border: none;
+    display: flex;
+    align-items: center ;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.box1 .btn-calculate button img{
+    margin-right: 10px;
+}
+
+
+span.error{
+    display: none;
+}
+
+
+
+/* START BOX2 */
+
+
+.box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--Slate-900);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 100px;
+    border-bottom-color: var(--White);
+}
+
+.box2 .content-text h2.title{
+    color: var(--White);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+.box2 .content-text p.subtitle{
+    color: var(--Slate-100);
+}
+
+/* END BOX2 */
+
+
+
+
+
+
+
+
+@media (max-width:900px) {
+    main section{
+        flex-direction: column;
+    }
+    main section .box1,
+    main section .box2{
+        padding: 20px 40px;
+        height: fit-content;
+        width: 100%;
+    }
+
+    main section .box1{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .box2{
+        border-top-right-radius:0px;
+        border-bottom-right-radius:0px;
+        border-bottom-left-radius: 0px;
+    }
+    .box1 .btn-calculate{
+        width: 90% ;
+        background-color: var(--primary-Lime) ;
+        margin: auto ;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+    .box1 .btn-calculate button{
+        max-width: inherit;
+        margin: auto;
+    }
+}
+
+
+
+
