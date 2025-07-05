@@ -1,27 +1,31 @@
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-:root{
-    --primary-Lime: hsl(61, 70%, 52%) ;
-    --primary-Red: hsl(4, 69%, 50%) ;
-    --White: hsl(0, 0%, 100%) ;
-    --Slate-100: hsl(202, 86%, 94%) ;
-    --Slate-300: hsl(203, 41%, 72%) ;
-    --Slate-500: hsl(200, 26%, 54%) ;
-    --Slate-700: hsl(200, 24%, 40%) ;
-    --Slate-900: hsl(202, 55%, 16%) ;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 body{
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+:root {
+    --primary-Lime: hsl(61, 70%, 52%);
+    --primary-Red: hsl(4, 69%, 50%);
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+}
+
+body {}
 
 
 
-main section{
+
+main section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,7 +34,7 @@ main section{
 }
 
 main section .box1,
-main section .box2{
+main section .box2 {
     height: max-content;
     padding: 40px 70px;
     height: 600px;
@@ -40,91 +44,115 @@ main section .box2{
     flex-direction: column;
 }
 
-main section .box1{
+main section .box1 {
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
     background-color: var(--White);
 }
 
-.box1 .text{
+.box1 .text {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.box1 .inputs .input{
+
+.box1 .inputs .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.box1 .inputs .input {
     margin: 15px 0;
 }
 
-.box1 .inputs input{
-    padding: 5px 10px;
+.box1 .inputs input {
     outline: none;
     width: 100%;
     margin: 5px 0;
 }
 
-.box1 .inputs .rate,
-.box1 .inputs .term,
-.box1 .inputs .amount{
-    position: relative;
+.amount div,
+.term div,
+.rate div {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
 }
-.box1 .inputs .term .input-symbol,
-.box1 .inputs .rate .input-symbol,
-.box1 .inputs .amount .input-symbol{
+
+.box1 .inputs div span,
+.box1 .inputs div input {
+    padding: 10px 20px;
+    min-height: 40px;
+}
+
+.box1 .amount div {
+    flex-direction: row;
+}
+
+.amount div input {
+    border: 1px solid var(--Slate-500);
+    border-left: 0;
+}
+
+.term div input,
+.rate div input {
+    border: 1px solid var(--Slate-500);
+    border-right: 0;
+}
+
+
+.amount div .input-symbol,
+.term div .input-symbol,
+.rate div .input-symbol {
     background-color: var(--Slate-100);
     width: fit-content;
-    padding: 0 10px ;
-    position: absolute;
-    font-size: 20px;
-    min-height: 28px;
-    border: 1px solid var(--Slate-100);
-    top: 65%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    border: 1px solid var(--Slate-500);
 }
 
-.box1 .inputs .amount .input-symbol{
-    left: 0;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+
+.term div .input-symbol,
+.rate div .input-symbol {
+    border-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
-.box1 .inputs .term .input-symbol,
-.box1 .inputs .rate .input-symbol{
-    right: 0;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+.amount div .input-symbol {
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
 }
 
 
 
 .box1 .inputs .type .interest,
-.box1 .inputs .type .repayment{
+.box1 .inputs .type .repayment {
     margin: 10px 0;
     display: flex;
+    align-items: center;
     flex-direction: row;
     width: 100%;
     border: 1px solid black;
-    padding: 10px 20px;
+    padding: 0 20px;
 
 }
 
 .box1 .inputs .type .interest input,
-.box1 .inputs .type .repayment input{
+.box1 .inputs .type .repayment input {
     width: fit-content;
     margin-right: 20px;
 }
 
 
-.box1 .btn-calculate button{
+.box1 .btn-calculate button {
     background-color: var(--primary-Lime);
     max-width: fit-content;
     border: none;
     display: flex;
-    align-items: center ;
+    align-items: center;
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
@@ -132,12 +160,12 @@ main section .box1{
     cursor: pointer;
 }
 
-.box1 .btn-calculate button img{
+.box1 .btn-calculate button img {
     margin-right: 10px;
 }
 
 
-span.error{
+span.error {
     display: none;
 }
 
@@ -146,7 +174,7 @@ span.error{
 /* START BOX2 */
 
 
-.box2{
+.box2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,14 +187,63 @@ span.error{
     border-bottom-color: var(--White);
 }
 
-.box2 .content-text h2.title{
+.box2 .content-text h2.title {
     color: var(--White);
     font-size: 30px;
     font-weight: 700;
     margin: 20px 0;
 }
-.box2 .content-text p.subtitle{
+
+.box2 .content-text p.subtitle {
     color: var(--Slate-100);
+}
+
+.box2.resulte {
+    justify-content: left;
+    align-items: normal;
+    text-align: left;
+}
+
+.box2.resulte h2 {
+    color: var(--White);
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+.box2.resulte p {
+    color: var(--Slate-100);
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.box2.resulte .resulte-content {
+    background-color: hsl(201, 58%, 9%);
+    padding: 30px 40px;
+    border-radius: 7px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: var(--primary-Lime);
+}
+
+.box2.resulte .resulte-content span.resulte-monthly {
+    color: var(--primary-Lime);
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.box2.resulte .resulte-content span.resulte-total {
+    color: var(--White);
+    font-size: 30px;
+}
+
+.box2.resulte .resulte-content p {
+    margin: 30px 0 5px;
+}
+
+.box2.notActive {
+    display: none;
 }
 
 /* END BOX2 */
@@ -179,38 +256,38 @@ span.error{
 
 
 @media (max-width:900px) {
-    main section{
+    main section {
         flex-direction: column;
     }
+
     main section .box1,
-    main section .box2{
+    main section .box2 {
         padding: 20px 40px;
         height: fit-content;
         width: 100%;
     }
 
-    main section .box1{
+    main section .box1 {
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
     }
-    .box2{
-        border-top-right-radius:0px;
-        border-bottom-right-radius:0px;
+
+    .box2 {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
         border-bottom-left-radius: 0px;
     }
-    .box1 .btn-calculate{
-        width: 90% ;
-        background-color: var(--primary-Lime) ;
-        margin: auto ;
+
+    .box1 .btn-calculate {
+        width: 90%;
+        background-color: var(--primary-Lime);
+        margin: auto;
         cursor: pointer;
         border-radius: 30px;
     }
-    .box1 .btn-calculate button{
+
+    .box1 .btn-calculate button {
         max-width: inherit;
         margin: auto;
     }
 }
-
-
-
-

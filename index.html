@@ -28,36 +28,32 @@
 
           <div class="amount input">
             <p>Mortgage Amount</p>
-            <span class="input-symbol">$</span>
-            <input type="text" id="amount">
+            <div>
+              <span class="input-symbol">$</span>
+              <input type="text" id="amount">
+            </div>
             <span class="error">required</span>
           </div>
 
-
-
-
-
-
-          <div class="term input">
-            <p>Mortgage Term</p>
-            <span class="input-symbol">years</span>
-            <input type="text" id="years">
-            <span class="error">required</span>
+          <div class="grid">
+            <div class="term input">
+              <p>Mortgage Term</p>
+              <div>
+                <span class="input-symbol">years</span>
+                <input type="text" id="years">
+              </div>
+              <span class="error">required</span>
+            </div>
+            
+            <div class="rate input">
+              <p>Interest Rate</p>
+              <div>
+                <span class="input-symbol">%</span>
+                <input type="text" id="rate">
+              </div>
+              <span class="error">required</span>
+            </div>
           </div>
-
-
-
-
-          <div class="rate input">
-            <p>Interest Rate</p>
-            <span class="input-symbol">%</span>
-            <input type="text" id="rate">
-            <span class="error">required</span>
-          </div>
-
-
-
-
 
 
           <div class="type input">
@@ -99,26 +95,26 @@
       </div>
 
 
+      <div class="box2 resulte notActive">
+        <h2>Your results</h2>
+        <p>
+          Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.
+        </p>
+        <div class="resulte-content">
+          <p>Your monthly repayments</p>
+          <div class="resulte-inf0">
+            <span class="resulte-monthly"></span>
+            <hr>
+            <p>Total you'll repay over the term</p>
+            <span class="resulte-total"></span>
+          </div>
+        </div>7
+      </div>
+
+
     </section>
   </main>
-
-
-
-
-
-
-
-
-  <!-- Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  Completed results end -->
-  
+  <script src="main.js"></script>
 </body>
 </html>
