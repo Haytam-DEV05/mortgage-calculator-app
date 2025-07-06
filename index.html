@@ -1,120 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <!-- LINK : CSS -->
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
-</head>
-<body>
-
-
-
-
-  <main>
-    <section>
-
-
-      <div class="box1">
-
-        <div class="text">
-          <h3  class="title">Mortgage Calculator</h3>
-          <a href="###">Clear All</a>
-        </div>
-
-        <div class="inputs">
-
-          <div class="amount input">
-            <p>Mortgage Amount</p>
-            <div>
-              <span class="input-symbol">$</span>
-              <input type="text" id="amount">
-            </div>
-            <span class="error">required</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- LINK : CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="box1">
+          <div class="text">
+            <h3 class="title">Mortgage Calculator</h3>
+            <a href="###">Clear All</a>
           </div>
 
-          <div class="grid">
-            <div class="term input">
-              <p>Mortgage Term</p>
+          <div class="inputs">
+            <div class="amount input">
+              <p>Mortgage Amount</p>
               <div>
-                <span class="input-symbol">years</span>
-                <input type="text" id="years">
+                <span class="input-symbol">$</span>
+                <input type="text" id="amount" />
               </div>
-              <span class="error">required</span>
+              <span class="error-text">this filed is required</span>
             </div>
-            
-            <div class="rate input">
-              <p>Interest Rate</p>
-              <div>
-                <span class="input-symbol">%</span>
-                <input type="text" id="rate">
+
+            <div class="grid">
+              <div class="term input">
+                <p>Mortgage Term</p>
+                <div>
+                  <span class="input-symbol">years</span>
+                  <input type="text" id="years"/>
+                </div>
+                <span class="error-text">this filed is required</span>
               </div>
-              <span class="error">required</span>
+
+              <div class="rate input">
+                <p>Interest Rate</p>
+                <div>
+                  <span class="input-symbol">%</span>
+                  <input type="text" id="rate"/>
+                </div>
+                <span class="error-text">this filed is required</span>
+              </div>
+            </div>
+
+            <div class="type input">
+              <p>Mortgage Type</p>
+
+              <div class="repayment">
+                <input type="radio" name="type" id="repayment" />
+                <p>Repayment</p>
+              </div>
+
+              <div class="interest">
+                <input type="radio" name="type" id="interest only" />
+                <p>Interest Only</p>
+              </div>
+              <span class="error">this filed is required</span>
             </div>
           </div>
 
-
-          <div class="type input">
-            <p>Mortgage Type</p>
-
-            <div class="repayment">
-              <input type="radio" name="type" id="repayment">
-              <p>Repayment</p>
-            </div>
-
-            <div class="interest">
-              <input type="radio" name="type" id="interest only">
-              <p>Interest Only</p>
-            </div>
-            <span class="error">required</span>
+          <div class="btn-calculate">
+            <button type="submit">
+              <img src="assets/images/icon-calculator.svg" alt="" /><span
+                >Calculate Repayments</span
+              >
+            </button>
           </div>
-
-
         </div>
 
 
-        <div class="btn-calculate">
-          <button type="submit"><img src="assets/images/icon-calculator.svg" alt=""><span>Calculate Repayments</span></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="box2">
+          <img src="assets/images/illustration-empty.svg" alt="" />
+          <div class="content-text">
+            <h2 class="title">Results shown here</h2>
+            <p class="subtitle">
+              Complete the form and click “calculate repayments” to see what
+              your monthly repayments would be.
+            </p>
+          </div>
         </div>
 
-
-      </div>
-
-
-      <div class="box2">
-        <img src="assets/images/illustration-empty.svg" alt="">
-        <div class="content-text">
-          <h2 class="title">Results shown here</h2>
-          <p class="subtitle">
-            Complete the form and click “calculate repayments” to see what 
-            your monthly repayments would be.
+        <div class="box2 resulte notActive">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
           </p>
-        </div>
-      </div>
-
-
-      <div class="box2 resulte notActive">
-        <h2>Your results</h2>
-        <p>
-          Your results are shown below based on the information you provided. 
-          To adjust the results, edit the form and click “calculate repayments” again.
-        </p>
-        <div class="resulte-content">
-          <p>Your monthly repayments</p>
-          <div class="resulte-inf0">
-            <span class="resulte-monthly"></span>
-            <hr>
-            <p>Total you'll repay over the term</p>
-            <span class="resulte-total"></span>
+          <div class="resulte-content">
+            <p>Your monthly repayments</p>
+            <div class="resulte-inf0">
+              <span class="resulte-monthly"></span>
+              <hr />
+              <p>Total you'll repay over the term</p>
+              <span class="resulte-total"></span>
+            </div>
           </div>
-        </div>7
-      </div>
-
-
-    </section>
-  </main>
-  <script src="main.js"></script>
-</body>
+          7
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
 </html>

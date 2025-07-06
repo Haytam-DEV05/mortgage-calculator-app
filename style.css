@@ -1,11 +1,12 @@
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-body{
+
+body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -96,34 +97,16 @@ main section .box1 {
     border-left: 0;
 }
 
+
 .term div input,
 .rate div input {
     border: 1px solid var(--Slate-500);
     border-right: 0;
 }
-
-
-.amount div .input-symbol,
-.term div .input-symbol,
-.rate div .input-symbol {
-    background-color: var(--Slate-100);
-    width: fit-content;
-    border: 1px solid var(--Slate-500);
-}
-
-
-.term div .input-symbol,
-.rate div .input-symbol {
-    border-left: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
 .amount div .input-symbol {
     border-right: 0;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-
 }
 
 
@@ -162,11 +145,6 @@ main section .box1 {
 
 .box1 .btn-calculate button img {
     margin-right: 10px;
-}
-
-
-span.error {
-    display: none;
 }
 
 
@@ -250,6 +228,41 @@ span.error {
 
 
 
+/* start ERRORS */
+
+.term div input.error,
+.rate div input.error,
+.amount div input.error {
+    border: 1px solid var(--primary-Red);
+}
+.amount div .input-symbol,
+.term div .input-symbol,
+.rate div .input-symbol {
+    background-color: var(--Slate-100);
+    width: fit-content;
+    border: 1px solid var(--Slate-500);
+}
+.amount div .input-symbol.error,
+.term div .input-symbol.error,
+.rate div .input-symbol.error{
+    background-color: var(--primary-Red);
+    color: var(--White);
+}
+
+
+
+span.error-text {
+    display: none;
+    color: var(--primary-Red);
+    font-size: 14px;
+    margin: -15px;
+}
+
+span.error-text.active{
+    display: block;
+}
+
+/* END ERRORS */
 
 
 
@@ -289,5 +302,9 @@ span.error {
     .box1 .btn-calculate button {
         max-width: inherit;
         margin: auto;
+    }
+    .box1 .inputs .grid{
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }
