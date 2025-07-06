@@ -22,26 +22,26 @@ btnCalculate.addEventListener('click', () => {
 
 })
 
-function calculatResulte (a, b, c) {
-  var resulte = (a * b) / c
-  document.querySelector('.resulte-monthly').innerHTML = `$${resulte.toFixed(
-    2
-  )}`
-  document.querySelector('.resulte-total').innerHTML = `$${
-    resulte.toFixed(2) * 3
-  }`
+function calculatResulte(principal, years, rate) {
+  let monthlyRate = (rate / 100) / 12;
+  let n = years * 12;
+  let monthlyPayment = (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -n));
+  let totalPayment = monthlyPayment * n;
+
+  document.querySelector('.resulte-monthly').innerHTML = `$${monthlyPayment.toFixed(2)}`
+  document.querySelector('.resulte-total').innerHTML = `$${totalPayment.toFixed(2)}`
 }
 
-
 function checkError(){
+  let isValid = true;
   var inputs = document.querySelectorAll(`input[type="text"]`) ;
   inputs.forEach((input)=>{
-    if(input.value === ""){
+    if(input.value.trim() === ""){
       input.classList.add("error") ;
       input.previousElementSibling.classList.add("error") ;
       var parent = input.parentElement ;
       parent.nextElementSibling.classList.add("active") ;
-      return false;
+      isValid = false;
     }else{
       input.classList.remove("error") ;
       input.previousElementSibling.classList.remove("error") ;
@@ -49,7 +49,9 @@ function checkError(){
       parent.nextElementSibling.classList.remove("active") ;
     }
   })
+  return isValid;
 }
+
 
 
 
